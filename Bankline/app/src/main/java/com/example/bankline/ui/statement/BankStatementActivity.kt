@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bankline.data.State
 import com.example.bankline.databinding.ActivityBankStatementBinding
 import com.example.bankline.domain.Correntista
-import com.example.bankline.domain.Movimentacao
 import com.example.bankline.ui.statement.adapter.BankStatementAdapter
 import com.google.android.material.snackbar.Snackbar
 

@@ -8,6 +8,7 @@ import com.example.bankline.databinding.ActivityWelcomeBinding
 import com.example.bankline.domain.Correntista
 import com.example.bankline.ui.statement.BankStatementActivity
 import com.example.bankline.ui.statement.BankStatementActivity.Companion.EXTRA_ACCOUNT_HOLDER
+import com.example.bankline.ui.statement.adapter.BankStatementAdapter
 
 class WelcomeActivity : AppCompatActivity() {
 

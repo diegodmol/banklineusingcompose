@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/txtWelcome"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="@dimen/margin_default"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="@dimen/margin_default"
@@ -20,14 +20,14 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tfIdAccount"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_marginStart="@dimen/margin_default"
         android:layout_marginTop="@dimen/margin_default"
         android:layout_marginEnd="@dimen/margin_default"
         android:hint="@string/txt_welcome_edt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/txtWelcome"
+        app:layout_constraintStart_toStartOf="@id/txtWelcome"
         app:layout_constraintTop_toBottomOf="@+id/txtWelcome">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -40,14 +40,14 @@
     <Button
         android:id="@+id/btnContinue"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="@dimen/margin_default"
         android:layout_marginTop="@dimen/margin_default"
         android:layout_marginEnd="@dimen/margin_default"
         android:enabled="false"
         android:hint="@string/btn_continue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tfIdAccount"
+        app:layout_constraintStart_toStartOf="@id/tfIdAccount"
         app:layout_constraintTop_toBottomOf="@id/tfIdAccount" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
