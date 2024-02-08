@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Movimentações</string>
+    <string name="txt_welcome">Bem vindo</string>
+    <string name="txt_welcome_edt">Informe o número da conta do correntista</string>
+    <string name="btn_continue">Continuar</string>
+    <string name="edt_id_account">Entre com número da conta</string>
+</resources>
