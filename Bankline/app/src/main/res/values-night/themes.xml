@@ -2,9 +2,9 @@
     <!-- Base application theme. -->
     <style name="Theme.Banklineandroid" parent="Theme.Material3.Dark">
         <!-- https://m3.material.io/libraries/mdc-android/color-theming -->
-        <item name="colorPrimary">@color/primary_200</item>
+        <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryContainer">@color/primary_700</item>
-        <item name="colorOnPrimaryContainer">@color/primary_100</item>
+        <item name="colorOnPrimaryContainer">@color/white</item>
         <item name="colorPrimaryInverse">@color/primary_600</item>
     </style>
 </resources>

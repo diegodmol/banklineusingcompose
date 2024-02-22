@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/menuFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.bankline.ui.menu.MenuFragment"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_hold_user"
+            app:destination="@id/holdUser" />
+    </fragment>
+
+    <activity
+        android:id="@+id/holdUser"
+        android:name="com.example.bankline.ui.welcome.WelcomeActivity"
+        android:label="Correntista"
+        tools:layout="@layout/activity_welcome" />
+</navigation>
