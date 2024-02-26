@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.bankline.R
 import com.example.bankline.databinding.FragmentMenuBinding
@@ -12,6 +13,7 @@ import com.example.bankline.domain.MenuItem
 import com.example.bankline.ui.menu.adapter.MenuAdapter
 
 class MenuFragment : Fragment() {
+
     private var _binding: FragmentMenuBinding? = null
     private val binding get() = _binding!!
 
@@ -19,7 +21,8 @@ class MenuFragment : Fragment() {
         dataSet = setMenuItem()
     )
 
-    override fun onCreateView(inflater: LayoutInflater,
+    override fun onCreateView(
+        inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
@@ -28,6 +31,7 @@ class MenuFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         setViews()
         setListeners()
     }
@@ -58,7 +62,11 @@ class MenuFragment : Fragment() {
     private fun redirectFlow(flow: Int) {
         when (flow) {
             0 -> {
+                findNavController().navigate(R.id.action_hold_user)
+            }
 
+            1 -> {
+                findNavController().navigate(R.id.action_about)
             }
         }
     }

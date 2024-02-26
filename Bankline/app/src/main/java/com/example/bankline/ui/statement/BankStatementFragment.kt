@@ -1,36 +1,50 @@
 package com.example.bankline.ui.statement
 
 import android.os.Bundle
-import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bankline.data.State
-import com.example.bankline.databinding.ActivityBankStatementBinding
-import com.example.bankline.domain.Correntista
+import com.example.bankline.databinding.FragmentBankStatementBinding
 import com.example.bankline.ui.statement.adapter.BankStatementAdapter
 import com.google.android.material.snackbar.Snackbar
 
-class BankStatementActivity : AppCompatActivity() {
-    private val binding by lazy {
-        ActivityBankStatementBinding.inflate(layoutInflater)
-    }
+class BankStatementFragment : Fragment() {
+
+    private var _binding: FragmentBankStatementBinding? = null
+    private val binding get() = _binding!!
 
     private val viewModel by viewModels<BankSatementViewModel>()
 
-    private val accountHolderId by lazy {
-        intent.getParcelableExtra<Correntista>(EXTRA_ACCOUNT_HOLDER)
+    private val accountHolder by navArgs<BankStatementFragmentArgs>()
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentBankStatementBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         setViews()
         findBankStatement()
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     private fun setViews() {
         with(binding) {
-            rvBankStatement.layoutManager = LinearLayoutManager(this@BankStatementActivity)
+            rvBankStatement.layoutManager = LinearLayoutManager(context)
             srlBankStatement.setOnRefreshListener {
                 findBankStatement()
             }
@@ -38,8 +52,8 @@ class BankStatementActivity : AppCompatActivity() {
     }
 
     private fun findBankStatement() {
-        accountHolderId?.id?.let { id ->
-            viewModel.getBankStatement(id).observe(this) { state ->
+        accountHolder.id.let {
+            viewModel.getBankStatement(id).observe(viewLifecycleOwner) { state ->
                 when (state) {
                     State.Loading -> binding.srlBankStatement.isRefreshing = true
                     is State.Success -> {
@@ -58,12 +72,9 @@ class BankStatementActivity : AppCompatActivity() {
                         }
                         binding.srlBankStatement.isRefreshing = false
                     }
+
                 }
             }
         }
-    }
-
-    companion object {
-        const val EXTRA_ACCOUNT_HOLDER = "com.example.bankline.ui.statement.EXTRA_ACCOUNT_HOLDER"
     }
 }

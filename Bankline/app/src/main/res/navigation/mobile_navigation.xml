@@ -11,11 +11,35 @@
         <action
             android:id="@+id/action_hold_user"
             app:destination="@id/holdUser" />
+
+        <action
+            android:id="@+id/action_about"
+            app:destination="@id/aboutFragment" />
     </fragment>
 
-    <activity
+    <fragment
         android:id="@+id/holdUser"
-        android:name="com.example.bankline.ui.welcome.WelcomeActivity"
+        android:name="com.example.bankline.ui.accountholder.AccountHolderFragment"
         android:label="Correntista"
-        tools:layout="@layout/activity_welcome" />
+        tools:layout="@layout/fragment_account_holder" >
+        <action
+            android:id="@+id/action_holdUser_to_statementFragment"
+            app:destination="@id/statementFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.bankline.ui.about.AboutFragment"
+        tools:layout="@layout/fragment_about" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/statementFragment"
+        android:name="com.example.bankline.ui.statement.BankStatementFragment"
+        tools:layout="@layout/fragment_bank_statement" >
+        <argument
+            android:name="id"
+            app:argType="com.example.bankline.domain.Correntista" />
+    </fragment>
+
 </navigation>

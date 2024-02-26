@@ -13,7 +13,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name="com.example.bankline.ui.menu.MainActivity"
+            android:name="com.example.bankline.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,11 +23,11 @@
         </activity>
 
         <activity
-            android:name="com.example.bankline.ui.welcome.WelcomeActivity"
+            android:name="com.example.bankline.ui.accountholder.AccountHolderFragment"
             android:exported="false" />
 
         <activity
-            android:name="com.example.bankline.ui.statement.BankStatementActivity"
+            android:name="com.example.bankline.ui.statement.BankStatementFragment"
             android:exported="false" />
     </application>
 
