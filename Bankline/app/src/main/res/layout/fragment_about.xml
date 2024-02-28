@@ -11,7 +11,7 @@
         android:id="@+id/bg_blue"
         android:layout_width="match_parent"
         android:layout_height="390dp"
-        android:background="@color/blue"
+        android:background="@color/orange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -38,8 +38,10 @@
             app:srcCompat="@drawable/ic_about_user" />
 
         <com.google.android.material.textview.MaterialTextView
+            style="@style/ShapeAppearance.Material3.Corner.Medium"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            tools:text="Diego Dias Mól" />
 
     </com.google.android.material.card.MaterialCardView>
 

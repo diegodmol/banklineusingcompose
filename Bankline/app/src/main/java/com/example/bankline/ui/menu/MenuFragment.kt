@@ -11,14 +11,16 @@ import com.example.bankline.R
 import com.example.bankline.databinding.FragmentMenuBinding
 import com.example.bankline.domain.MenuItem
 import com.example.bankline.ui.menu.adapter.MenuAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MenuFragment : Fragment() {
 
     private var _binding: FragmentMenuBinding? = null
     private val binding get() = _binding!!
 
     private val adapter = MenuAdapter(
-        dataSet = setMenuItem()
+        menuItens = setMenuItem()
     )
 
     override fun onCreateView(
@@ -68,13 +70,18 @@ class MenuFragment : Fragment() {
             1 -> {
                 findNavController().navigate(R.id.action_about)
             }
+
+            2 -> {
+
+            }
         }
     }
 
     private fun setMenuItem(): List<MenuItem> {
-        val dataSet = ArrayList<MenuItem>()
-        dataSet.add(MenuItem(R.drawable.ic_person, "Correntista", 0))
-        dataSet.add(MenuItem(R.drawable.ic_about, "Sobre", 1))
-        return dataSet
+        val menuItens = ArrayList<MenuItem>()
+        menuItens.add(MenuItem(R.drawable.ic_person, "Correntista", 0))
+        menuItens.add(MenuItem(R.drawable.ic_about, "Sobre", 1))
+        menuItens.add(MenuItem(R.drawable.ic_movies, "Filmes", 2))
+        return menuItens
     }
 }

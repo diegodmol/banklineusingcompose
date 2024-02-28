@@ -7,7 +7,7 @@ import com.example.bankline.databinding.MenuInitialItemBinding
 import com.example.bankline.domain.MenuItem
 
 class MenuAdapter(
-    private val dataSet: List<MenuItem>,
+    private val menuItens: List<MenuItem>,
     var onClickItem: (menuItemPosition: Int) -> Unit = {}
 ) : RecyclerView.Adapter<MenuAdapter.ViewHolder>() {
 
@@ -29,10 +29,10 @@ class MenuAdapter(
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        val item = dataSet[position]
+        val item = menuItens[position]
         viewHolder.bind(item)
     }
 
-    override fun getItemCount() = dataSet.size
+    override fun getItemCount() = menuItens.size
 
 }

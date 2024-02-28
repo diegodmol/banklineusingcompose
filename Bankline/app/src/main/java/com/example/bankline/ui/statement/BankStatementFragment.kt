@@ -12,13 +12,15 @@ import com.example.bankline.data.State
 import com.example.bankline.databinding.FragmentBankStatementBinding
 import com.example.bankline.ui.statement.adapter.BankStatementAdapter
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class BankStatementFragment : Fragment() {
 
     private var _binding: FragmentBankStatementBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel by viewModels<BankSatementViewModel>()
+    private val viewModel: BankSatementViewModel by viewModels()
 
     private val accountHolder by navArgs<BankStatementFragmentArgs>()
 
@@ -53,7 +55,7 @@ class BankStatementFragment : Fragment() {
 
     private fun findBankStatement() {
         accountHolder.id.let {
-            viewModel.getBankStatement(id).observe(viewLifecycleOwner) { state ->
+            viewModel.findBankStatement(id).observe(viewLifecycleOwner) { state ->
                 when (state) {
                     State.Loading -> binding.srlBankStatement.isRefreshing = true
                     is State.Success -> {
@@ -72,7 +74,6 @@ class BankStatementFragment : Fragment() {
                         }
                         binding.srlBankStatement.isRefreshing = false
                     }
-
                 }
             }
         }

@@ -9,7 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.bankline.databinding.FragmentAccountHolderBinding
 import com.example.bankline.domain.Correntista
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AccountHolderFragment : Fragment() {
 
     private var _binding: FragmentAccountHolderBinding? = null
