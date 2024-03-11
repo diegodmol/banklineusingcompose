@@ -7,7 +7,7 @@ import javax.inject.Inject
 class BankLineRepositoryImpl @Inject constructor(
     private val api: BankLineApi
 ) : BankLineRepository {
-    override fun findBankStatement(accountHolderId: Int): List<Movimentacao> {
+    override suspend fun findBankStatement(accountHolderId: Int): List<Movimentacao> {
         return api.bankStatement(accountHolderId)
     }
 }

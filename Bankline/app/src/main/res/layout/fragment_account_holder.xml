@@ -24,17 +24,18 @@
             android:id="@+id/edtIdAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textColorHint="@color/orange" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnContinue"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginStart="@dimen/margin_medium"
         android:layout_marginTop="@dimen/margin_default"
-        android:layout_marginEnd="@dimen/margin_default"
+        android:layout_marginEnd="@dimen/margin_medium"
         android:enabled="false"
         android:hint="@string/btn_continue"
         app:layout_constraintEnd_toEndOf="@id/tfIdAccount"

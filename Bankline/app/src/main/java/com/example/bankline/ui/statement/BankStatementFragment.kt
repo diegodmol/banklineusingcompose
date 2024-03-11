@@ -10,6 +10,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bankline.data.State
 import com.example.bankline.databinding.FragmentBankStatementBinding
+import com.example.bankline.domain.Movimentacao
 import com.example.bankline.ui.statement.adapter.BankStatementAdapter
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
@@ -55,12 +56,13 @@ class BankStatementFragment : Fragment() {
 
     private fun findBankStatement() {
         accountHolder.id.let {
-            viewModel.findBankStatement(id).observe(viewLifecycleOwner) { state ->
+
+            viewModel.data.observe(viewLifecycleOwner){state ->
                 when (state) {
                     State.Loading -> binding.srlBankStatement.isRefreshing = true
                     is State.Success -> {
                         binding.rvBankStatement.adapter =
-                            state.data?.let { BankStatementAdapter(it) }
+                            state.data?.let { BankStatementAdapter(it as List<Movimentacao>) }
                         binding.srlBankStatement.isRefreshing = false
                     }
 
@@ -75,6 +77,7 @@ class BankStatementFragment : Fragment() {
                         binding.srlBankStatement.isRefreshing = false
                     }
                 }
+
             }
         }
     }
