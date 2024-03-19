@@ -4,24 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/margin_medium"
+    android:background="@drawable/background_about_fragment"
     android:padding="@dimen/margin_medium"
     tools:context=".ui.menu.MenuFragment">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text"
+        style="@style/TextAppearance.Material3.TitleSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="Bem Vindo"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:text="@string/welcome_message"
         android:textAlignment="center"
+        android:layout_marginTop="@dimen/margin_medium"
         android:textSize="52sp"
-        style="@style/TextAppearance.Material3.TitleSmall"
         app:layout_constraintBottom_toTopOf="@+id/scrollMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollMenu"
