@@ -4,21 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_about_fragment"
+    android:background="@drawable/background_fragment"
     android:padding="@dimen/margin_medium"
     tools:context=".ui.about.AboutFragment">
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:padding="@dimen/margin_medium"
         android:layout_height="wrap_content">
 
+
         <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="texte" />
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/my_name"
+            android:textSize="30sp"
+            app:fontFamily="sans-serif-condensed-light"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtProfession"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Desenvolvedor Android"
+            android:textSize="30sp"
+            app:fontFamily="sans-serif-condensed-light"
+            app:layout_constraintTop_toBottomOf="@id/txtName" />
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgLinkedin"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_linkedin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtProfession" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgWhatsapp"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:src="@drawable/ic_whatsapp"
+            app:layout_constraintStart_toEndOf="@id/imgLinkedin"
+            app:layout_constraintTop_toTopOf="@id/imgLinkedin" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:src="@drawable/ic_email"
+            app:layout_constraintStart_toEndOf="@id/imgWhatsapp"
+            app:layout_constraintTop_toTopOf="@id/imgWhatsapp" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
