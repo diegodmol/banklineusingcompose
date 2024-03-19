@@ -15,6 +15,10 @@
         <action
             android:id="@+id/action_about"
             app:destination="@id/aboutFragment" />
+
+        <action
+            android:id="@+id/action_movie"
+            app:destination="@id/movieFragment" />
     </fragment>
 
     <fragment
@@ -41,5 +45,12 @@
             android:name="id"
             app:argType="com.example.bankline.domain.Correntista" />
     </fragment>
+
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.example.bankline.ui.movies.MoviesFragment"
+        tools:layout="@layout/fragment_movies" >
+    </fragment>
+
 
 </navigation>

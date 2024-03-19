@@ -72,7 +72,7 @@ class MenuFragment : Fragment() {
             }
 
             2 -> {
-
+                findNavController().navigate(R.id.action_movie)
             }
         }
     }

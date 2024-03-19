@@ -22,13 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name="com.example.bankline.ui.accountholder.AccountHolderFragment"
+            android:name=".ui.accountholder.AccountHolderFragment"
             android:exported="false" />
-
         <activity
-            android:name="com.example.bankline.ui.statement.BankStatementFragment"
+            android:name=".ui.statement.BankStatementFragment"
             android:exported="false" />
     </application>
 
